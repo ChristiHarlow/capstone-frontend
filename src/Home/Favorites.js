@@ -6,7 +6,9 @@ const Favorites = () => {
 
     useEffect(() => {
         const getFavorites = async () => {
-            const response = await fetch("http://localhost:3001/favorites");
+            const response = await fetch(
+                "https://christiharlow-capstone-backend.herokuapp.com/favorites"
+            );
             const data = await response.json();
             setFavorites(data.favorites);
             console.log(data);
