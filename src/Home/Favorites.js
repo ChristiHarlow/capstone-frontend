@@ -6,13 +6,12 @@ const Favorites = () => {
 
     useEffect(() => {
         const getFavorites = async () => {
-            const response = await fetch("http://localhost:3001");
-
+            let host = "http://localhost:3001";
             if (window.location.host.indexOf(".herokuapp.com") !== -1) {
-                Favorites =
-                    "https://christiharlow-capstone-backend.herokuapp.com/favorites";
+                host = "https://christiharlow-capstone-backend.herokuapp.com";
             }
 
+            const response = await fetch(`${host}/favorites`);
             const data = await response.json();
             setFavorites(data.favorites);
             console.log(data);
