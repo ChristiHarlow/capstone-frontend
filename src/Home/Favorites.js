@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Masonry from "masonry-layout";
 
 const Favorites = () => {
     const [favorites, setFavorites] = useState([]);
@@ -14,6 +15,11 @@ const Favorites = () => {
             const response = await fetch(`${host}/favorites`);
             const data = await response.json();
             setFavorites(data.favorites);
+            setTimeout(() => {
+                const msnry = new Masonry(".grid", {
+                    itemSelector: ".grid-item",
+                });
+            }, 500);
             console.log(data);
         };
 
@@ -21,38 +27,36 @@ const Favorites = () => {
     }, []);
 
     return (
-        <div>
-            <div className="row">
-                {favorites.map((favorite) => {
-                    return (
-                        <div key={favorite.id} className="col-sm-6">
-                            <div className="card">
-                                <img
-                                    src={favorite.imageURL}
-                                    className="card-img-top"
-                                    alt="Picture of Favorite Things"
-                                />
-                                <div className="card-body">
-                                    <h5 className="card-title">
-                                        {favorite.category} <br />
-                                        {favorite.name}
-                                    </h5>
-                                    <p className="card-text">
-                                        {favorite.summary}
-                                        <br />
-                                        {favorite.price}
-                                    </p>
-                                    <a href={favorite.links} target="_blank">
-                                        <button className="btn btn-primary">
-                                            Buy now
-                                        </button>
-                                    </a>
-                                </div>
+        <div className="grid">
+            {favorites.map((favorite) => {
+                return (
+                    <div key={favorite.id} className="grid-item">
+                        <div className="card">
+                            <img
+                                src={favorite.imageURL}
+                                className="card-img-top"
+                                alt="Picture of Favorite Things"
+                            />
+                            <div className="card-body">
+                                <h5 className="card-title">
+                                    {favorite.category} <br />
+                                    {favorite.name}
+                                </h5>
+                                <p className="card-text">
+                                    {favorite.summary}
+                                    <br />
+                                    {favorite.price}
+                                </p>
+                                <a href={favorite.links} target="_blank">
+                                    <button className="btn btn-primary">
+                                        Buy now
+                                    </button>
+                                </a>
                             </div>
                         </div>
-                    );
-                })}
-            </div>
+                    </div>
+                );
+            })}
         </div>
     );
 };
