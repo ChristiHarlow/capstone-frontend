@@ -42,14 +42,11 @@ const Favorites = () => {
                                     {favorite.category} <br />
                                     {favorite.name}
                                 </h5>
-                                <p className="card-text">
-                                    {favorite.summary}
-                                    <br />
-                                    {favorite.price}
-                                </p>
+                                <p className="card-text">{favorite.summary}</p>
+                                <h5>{favorite.price}</h5>
                                 <a href={favorite.links} target="_blank">
                                     <button className="btn btn-primary">
-                                        Buy now
+                                        Purchase
                                     </button>
                                 </a>
                             </div>

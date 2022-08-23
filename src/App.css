@@ -19,8 +19,14 @@ footer {
     background-color: #9f2771;
 }
 
-btn {
-    background-color: #9f2771;
+.btn {
+    background-color: #b36a5e;
+    border: 2px solid #eeebd3;
+}
+
+.btn:hover {
+    background-color: #f7c548;
+    border: 2px solid #f7c548;
 }
 
 .grid-item {
@@ -32,6 +38,7 @@ btn {
 
 .grid-item > .card {
     background: #eeebd3;
+    border: none;
 }
 
 .grid {
@@ -41,4 +48,14 @@ btn {
 h5 {
     font-weight: bold;
     text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+    color: #eeebd3;
+}
+
+footer {
+    font-weight: bold;
+    color: #eeebd3;
 }
