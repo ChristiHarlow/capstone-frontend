@@ -8,10 +8,7 @@ const Favorites = () => {
     useEffect(() => {
         const getFavorites = async () => {
             let host = "http://localhost:3001";
-            if (
-                window.location.host.indexOf("christisfavoritethings.com") !==
-                -1
-            ) {
+            if (window.location.host.indexOf(".herokuapp.com") !== -1) {
                 host = "https://christiharlow-capstone-backend.herokuapp.com";
             }
 
