@@ -53,9 +53,11 @@ h5 {
 h1 {
     font-weight: bold;
     color: #eeebd3;
+    font-size: 6vw;
 }
 
 footer {
     font-weight: bold;
     color: #eeebd3;
+    font-size: 3vw;
 }
