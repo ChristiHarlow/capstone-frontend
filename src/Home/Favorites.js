@@ -9,7 +9,8 @@ const Favorites = () => {
         const getFavorites = async () => {
             let host = "http://localhost:3001";
             if (window.location.host.indexOf(".herokuapp.com") !== -1) {
-                host = "https://christiharlow-capstone-backend.herokuapp.com";
+                host =
+                    "https://christiharlow-capstone-backend.christisfavoritethings.com";
             }
 
             const response = await fetch(`${host}/favorites`);
