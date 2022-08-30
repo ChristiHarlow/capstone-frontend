@@ -46,7 +46,7 @@ const Favorites = () => {
                                 <h5>{favorite.price}</h5>
                                 <a href={favorite.links} target="_blank">
                                     <button className="btn btn-primary">
-                                        Purchase
+                                        Learn more
                                     </button>
                                 </a>
                             </div>
