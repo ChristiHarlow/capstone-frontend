@@ -12,7 +12,8 @@ const Favorites = () => {
                 window.location.host.indexOf("christisfavoritethings.com") !==
                 -1
             ) {
-                host = "https://christiharlow-capstone-backend.herokuapp.com";
+                host =
+                    "https://Capstonebackend-env.eba-zvb54xen.us-east-1.elasticbeanstalk.com";
             }
 
             const response = await fetch(`${host}/favorites`);
