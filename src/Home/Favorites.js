@@ -12,8 +12,7 @@ const Favorites = () => {
                 window.location.host.indexOf("christisfavoritethings.com") !==
                 -1
             ) {
-                host =
-                    "https://Capstonebackend-env.eba-zvb54xen.us-east-1.elasticbeanstalk.com";
+                host = "https://api.christisfavoritethings.com";
             }
 
             const response = await fetch(`${host}/favorites`);
