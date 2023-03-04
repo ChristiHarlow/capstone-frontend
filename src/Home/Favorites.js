@@ -4,7 +4,6 @@ import Masonry from "masonry-layout";
 
 const Favorites = () => {
     const [favorites, setFavorites] = useState([]);
-
     useEffect(() => {
         const getFavorites = async () => {
             let host = "http://localhost:3001";
