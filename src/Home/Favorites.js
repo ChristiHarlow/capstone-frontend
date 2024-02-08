@@ -11,7 +11,7 @@ const Favorites = () => {
                 window.location.host.indexOf("christisfavoritethings.com") !==
                 -1
             ) {
-                host = "https://api.christisfavoritethings.com";
+                host = "https://christi-capstone-backend.fly.dev";
             }
 
             const response = await fetch(`${host}/favorites`);
