@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import Masonry from "masonry-layout";
 
 const Favorites = () => {
@@ -18,7 +18,7 @@ const Favorites = () => {
             const data = await response.json();
             setFavorites(data.favorites);
             setTimeout(() => {
-                const msnry = new Masonry(".grid", {
+                new Masonry(".grid", {
                     itemSelector: ".grid-item",
                 });
             }, 500);
@@ -37,7 +37,7 @@ const Favorites = () => {
                             <img
                                 src={favorite.imageURL}
                                 className="card-img-top"
-                                alt="Picture of Favorite Things"
+                                alt={favorite.name}
                             />
                             <div className="card-body">
                                 <h5 className="card-title">
@@ -46,7 +46,11 @@ const Favorites = () => {
                                 </h5>
                                 <p className="card-text">{favorite.summary}</p>
                                 <h5>{favorite.price}</h5>
-                                <a href={favorite.links} target="_blank">
+                                <a
+                                    href={favorite.links}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                >
                                     <button className="btn btn-primary">
                                         Learn more
                                     </button>
