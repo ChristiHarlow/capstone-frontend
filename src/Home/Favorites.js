@@ -4,6 +4,8 @@ import Masonry from "masonry-layout";
 
 const Favorites = () => {
     const [favorites, setFavorites] = useState([]);
+    const [error, setError] = useState(null); // State to hold error information
+
     useEffect(() => {
         const getFavorites = async () => {
             let host = "http://localhost:3001";
@@ -14,15 +16,24 @@ const Favorites = () => {
                 host = "https://christi-capstone-backend.fly.dev";
             }
 
-            const response = await fetch(`${host}/favorites`);
-            const data = await response.json();
-            setFavorites(data.favorites);
-            setTimeout(() => {
-                new Masonry(".grid", {
-                    itemSelector: ".grid-item",
-                });
-            }, 500);
-            console.log(data);
+            try {
+                const response = await fetch(`${host}/favorites`);
+                if (!response.ok) {
+                    throw new Error("Failed to fetch data");
+                }
+
+                const data = await response.json();
+                setFavorites(data.favorites);
+                setTimeout(() => {
+                    new Masonry(".grid", {
+                        itemSelector: ".grid-item",
+                    });
+                }, 500);
+                console.log(data);
+            } catch (error) {
+                console.error("Error fetching favorites:", error);
+                setError(error); // If an error occurs, set error state
+            }
         };
 
         getFavorites();
