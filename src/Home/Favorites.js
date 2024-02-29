@@ -4,7 +4,6 @@ import Masonry from "masonry-layout";
 
 const Favorites = () => {
     const [favorites, setFavorites] = useState([]);
-    const [error, setError] = useState(null); // State to hold error information
 
     useEffect(() => {
         const getFavorites = async () => {
@@ -30,10 +29,7 @@ const Favorites = () => {
                     });
                 }, 500);
                 console.log(data);
-            } catch (error) {
-                console.error("Error fetching favorites:", error);
-                setError(error); // If an error occurs, set error state
-            }
+            } catch (error) {}
         };
 
         getFavorites();
