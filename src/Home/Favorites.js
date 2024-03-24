@@ -12,7 +12,7 @@ const Favorites = () => {
                 window.location.host.indexOf("christisfavoritethings.com") !==
                 -1
             ) {
-                host = "https://christi-capstone-backend.fly.dev";
+                host = "https://favorite-things-120671.ue.r.appspot.com";
             }
 
             try {
