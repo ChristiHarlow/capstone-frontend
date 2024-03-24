@@ -7,7 +7,7 @@ const Favorites = () => {
 
     useEffect(() => {
         const getFavorites = async () => {
-            let host = "http://localhost:3001";
+            let host = "http://localhost:3020";
             if (
                 window.location.host.indexOf("christisfavoritethings.com") !==
                 -1
