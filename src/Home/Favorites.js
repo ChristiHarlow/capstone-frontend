@@ -13,7 +13,7 @@ const Favorites = () => {
                 -1
             ) {
                 
-                host = "https://christisfavoritethings.com:8080";
+                host = "https://christisfavoritethings.com";
                 console.log("Changing host to" , host);
             }
 
