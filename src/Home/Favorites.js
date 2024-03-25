@@ -18,7 +18,7 @@ const Favorites = () => {
             }
 
             try {
-                const response = await fetch(`${host}/favorites`);
+                const response = await fetch(`${host}/Favorites`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch data");
                 }
