@@ -13,7 +13,7 @@ const Favorites = () => {
                 -1
             ) {
                 
-                host = "https://favorite-things-120671.ue.r.appspot.com";
+                host = "https://christisfavoritethings.com";
                 console.log("Changing host to" , host);
             }
 
