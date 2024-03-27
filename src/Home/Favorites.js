@@ -1,21 +1,12 @@
 import { useEffect, useState } from "react";
 //import { Link } from "react-router-dom";
-import Masonry from "masonry-layout";
 
 const Favorites = () => {
     const [favorites, setFavorites] = useState([]);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const getFavorites = async () => {
-            let host = "http://localhost:3020";
-            if (
-                window.location.host.indexOf("christisfavoritethings.com") !==
-                -1
-            ) {
-                
-                host = "https://christisfavoritethings.com";
-            }
-
             try {
                 const response = await fetch(`${host}/Favorites`);
                 if (!response.ok) {
@@ -24,17 +15,27 @@ const Favorites = () => {
 
                 const data = await response.json();
                 setFavorites(data.favorites);
-                setTimeout(() => {
-                    new Masonry(".grid", {
-                        itemSelector: ".grid-item",
-                    });
-                }, 500);
-                console.log(data);
-            } catch (error) {}
-        };
+                initializeMasonryLayout();
+            } catch (error) {
+                setError(error.message);
+            }
+        };   
+        
+        getFavorites(); / Call getFavorites inside useEffect
+        
+    }, [host]);
 
-        getFavorites();
-    }, []);
+    const initializeMasonryLayout = () => {
+        setTimeout(() => {
+            new Masonry(".grid", {
+                itemSelector: ".grid-item",
+            });
+        }, 500);
+    };
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
 
     return (
         <div className="grid">
