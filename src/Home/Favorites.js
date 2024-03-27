@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 //import { Link } from "react-router-dom";
+import Masonry from "masonry-layout"; // Import Masonry
 
 const Favorites = ({host}) => {
     const [favorites, setFavorites] = useState([]);
