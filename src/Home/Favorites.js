@@ -21,7 +21,7 @@ const Favorites = () => {
             }
         };   
         
-        getFavorites(); / Call getFavorites inside useEffect
+        getFavorites(); // Call getFavorites inside useEffect
         
     }, [host]);
 
