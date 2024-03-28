@@ -1,5 +1,0 @@
-[[redirects]]
-from = "/api/*"
-to = "https://favorite-things-120671.ue.r.appspot.com/:splat"
-status = 200
-force = true

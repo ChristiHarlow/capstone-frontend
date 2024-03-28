@@ -9,7 +9,7 @@ const Favorites = ({host}) => {
     useEffect(() => {
         const getFavorites = async () => {
             try {
-                const response = await fetch(`${host}/Favorites`);
+                const response = await fetch(`${host}/favorites`);
                 if (!response.ok) {
                     throw new Error("Failed to fetch data");
                 }
