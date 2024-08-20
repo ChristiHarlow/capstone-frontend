@@ -4,7 +4,8 @@ import Header from "./Header";
 
 const Home = () => {
     // Define the host URL for local deployment
-    const host = "http://localhost:3020";
+    const apiUrl = 'https://api.christisfavoritethings.com/api';
+
 
     return (
         <div className="container">
