@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* https://coolors.co/35524a-4056f4-eeebd3-b36a5e-f7c548 */
 
 /* https://coolors.co/9f2771-f54076-eeebd3-b36a5e-f7c548 */
@@ -67,43 +66,4 @@ footer {
     font-size: 3vw;
     font-family: "Trirong", sans-serif;
     background-color: #9f2771;
-=======
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
->>>>>>> c26d0a58413b28994dc5e16fc67a9320d348e7e2
 }

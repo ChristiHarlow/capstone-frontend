@@ -2,7 +2,9 @@ import Favorites from "./Favorites";
 import Footer from "./Footer";
 import Header from "./Header";
 
-const Home = () => {
+
+
+function Home() {
     // Define the host URL for local deployment
     const apiUrl = 'https://api.christisfavoritethings.com/api';
 
@@ -10,10 +12,10 @@ const Home = () => {
     return (
         <div className="container">
             <Header />
-            <Favorites host={host}/>
+            <Favorites host={apiUrl} />
             <Footer />
         </div>
     );
-};
+}
 
 export default Home;
