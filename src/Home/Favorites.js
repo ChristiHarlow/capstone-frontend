@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
-//import { Link } from "react-router-dom";
 import Masonry from "masonry-layout"; // Import Masonry
+import { useEffect, useState } from "react";
 
-const Favorites = ({host}) => {
+const Favorites = ({ host }) => {
     const [favorites, setFavorites] = useState([]);
     const [error, setError] = useState(null);
 
@@ -20,16 +19,17 @@ const Favorites = ({host}) => {
             } catch (error) {
                 setError(error.message);
             }
-        };   
-        
+        };
+
         getFavorites(); // Call getFavorites inside useEffect
-        
     }, [host]);
 
     const initializeMasonryLayout = () => {
         setTimeout(() => {
             new Masonry(".grid", {
                 itemSelector: ".grid-item",
+                columnWidth: ".grid-item",
+                percentPosition: true,
             });
         }, 500);
     };
@@ -40,36 +40,34 @@ const Favorites = ({host}) => {
 
     return (
         <div className="grid">
-            {favorites.map((favorite) => {
-                return (
-                    <div key={favorite.id} className="grid-item">
-                        <div className="card">
-                            <img
-                                src={favorite.imageURL}
-                                className="card-img-top"
-                                alt={favorite.name}
-                            />
-                            <div className="card-body">
-                                <h5 className="card-title">
-                                    {favorite.category} <br />
-                                    {favorite.name}
-                                </h5>
-                                <p className="card-text">{favorite.summary}</p>
-                                <h5>{favorite.price}</h5>
-                                <a
-                                    href={favorite.links}
-                                    target="_blank"
-                                    rel="noreferrer noopener"
-                                >
-                                    <button className="btn btn-primary">
-                                        Learn more
-                                    </button>
-                                </a>
-                            </div>
+            {favorites.map((favorite) => (
+                <div key={favorite.id} className="grid-item">
+                    <div className="card">
+                        <img
+                            src={favorite.imageURL}
+                            className="card-img-top"
+                            alt={favorite.name}
+                        />
+                        <div className="card-body">
+                            <h5 className="card-title">
+                                {favorite.category} <br />
+                                {favorite.name}
+                            </h5>
+                            <p className="card-text">{favorite.summary}</p>
+                            <h5>{favorite.price}</h5>
+                            <a
+                                href={favorite.links}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                            >
+                                <button className="btn btn-primary">
+                                    Learn more
+                                </button>
+                            </a>
                         </div>
                     </div>
-                );
-            })}
+                </div>
+            ))}
         </div>
     );
 };
