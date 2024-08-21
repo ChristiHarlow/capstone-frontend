@@ -1,44 +1,51 @@
-import Masonry from "masonry-layout"; // Import Masonry
-import { useEffect, useState } from "react";
+import Masonry from 'masonry-layout'; // Import Masonry
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+
+Favorites.propTypes = {
+    host: PropTypes.string.isRequired,
+};
+
+
 
 const Favorites = ({ host }) => {
-    const [favorites, setFavorites] = useState([]);
-    const [error, setError] = useState(null);
+  const [favorites, setFavorites] = useState([])
+  const [error, setError] = useState(null)
 
-    useEffect(() => {
-        const getFavorites = async () => {
-            try {
-                const response = await fetch(`${host}/favorites`);
-                if (!response.ok) {
-                    throw new Error("Failed to fetch data");
-                }
+  useEffect(() => {
+    const getFavorites = async () => {
+      try {
+        const response = await fetch(`${host}/favorites`)
+        if (!response.ok) {
+          throw new Error('Failed to fetch data')
+        }
 
-                const data = await response.json();
-                setFavorites(data.favorites);
-                initializeMasonryLayout();
-            } catch (error) {
-                setError(error.message);
-            }
-        };
-
-        getFavorites(); // Call getFavorites inside useEffect
-    }, [host]);
-
-    const initializeMasonryLayout = () => {
-        setTimeout(() => {
-            new Masonry(".grid", {
-                itemSelector: ".grid-item",
-                columnWidth: ".grid-item",
-                percentPosition: true,
-            });
-        }, 500);
-    };
-
-    if (error) {
-        return <div>Error: {error}</div>;
+        const data = await response.json()
+        setFavorites(data.favorites)
+        initializeMasonryLayout()
+      } catch (error) {
+        setError(error.message)
+      }
     }
 
-    return (
+    getFavorites() // Call getFavorites inside useEffect
+  }, [host])
+
+  const initializeMasonryLayout = () => {
+    setTimeout(() => {
+      new Masonry('.grid', {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-item',
+        percentPosition: true
+      })
+    }, 500)
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>
+  }
+
+  return (
         <div className="grid">
             {favorites.map((favorite) => (
                 <div key={favorite.id} className="grid-item">
@@ -69,7 +76,7 @@ const Favorites = ({ host }) => {
                 </div>
             ))}
         </div>
-    );
-};
+  )
+}
 
-export default Favorites;
+export default Favorites

@@ -1,15 +1,14 @@
-import React from 'react';
+import React from 'react'
 
 const Header = () => {
-    return (
+  return (
         <header
             className="d-flex flex-column align-items-center justify-content-center"
             id="intro"
         >
             <h1>Christi's Favorite Things</h1>
         </header>
-    );
-};
+  )
+}
 
-export default Header;
-
+export default Header
