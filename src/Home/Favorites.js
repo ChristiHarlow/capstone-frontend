@@ -2,12 +2,6 @@ import Masonry from 'masonry-layout'; // Import Masonry
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 
-Favorites.propTypes = {
-    host: PropTypes.string.isRequired,
-};
-
-
-
 const Favorites = ({ host }) => {
   const [favorites, setFavorites] = useState([])
   const [error, setError] = useState(null)
@@ -78,5 +72,10 @@ const Favorites = ({ host }) => {
         </div>
   )
 }
+
+Favorites.propTypes = {
+    host: PropTypes.string.isRequired,
+};
+
 
 export default Favorites
