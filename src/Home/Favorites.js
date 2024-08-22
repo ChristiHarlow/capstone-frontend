@@ -1,9 +1,8 @@
 import Masonry from 'masonry-layout'; // Import Masonry
-import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 
-const host = 'https://api.christisfavoritethings.com/api'
-const Favorites = ({ host }) => {
+const Favorites = ({host}) => {
   const [favorites, setFavorites] = useState([])
   const [error, setError] = useState(null)
 
