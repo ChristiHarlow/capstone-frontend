@@ -18,13 +18,24 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "env": {
+      "jest": true,
+      "browser": true,
+      "es6": true
+    },
+    "rules": {
+      "react/react-in-jsx-scope": "off",
+      "no-undef": "error",
+      "react/no-unescaped-entities": "error"
+    }
   },
   "browserslist": {
     "production": [
@@ -38,15 +49,10 @@
       "last 1 safari version"
     ]
   },
-  "engines": {
-    "node": "20.x",
-    "npm": "10.x"
-  },
   "devDependencies": {
-    "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.6.0",
     "eslint-plugin-react": "^7.35.0"
   }

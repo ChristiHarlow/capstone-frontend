@@ -6,7 +6,7 @@ const Header = () => {
             className="d-flex flex-column align-items-center justify-content-center"
             id="intro"
         >
-            <h1>Christi's Favorite Things</h1>
+            <h1>Christi&apos;s Favorite Things</h1>
         </header>
   )
 }

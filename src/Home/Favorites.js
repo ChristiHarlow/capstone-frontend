@@ -1,6 +1,6 @@
-import Masonry from 'masonry-layout'; // Import Masonry
-import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
+import Masonry from 'masonry-layout' // Import Masonry
+import PropTypes from 'prop-types'
+import React, { useEffect, useState } from 'react'
 
 const Favorites = ({ host }) => {
   const [favorites, setFavorites] = useState([])
@@ -27,7 +27,7 @@ const Favorites = ({ host }) => {
 
   const initializeMasonryLayout = () => {
     setTimeout(() => {
-      new Masonry('.grid', {
+      Masonry('.grid', {
         itemSelector: '.grid-item',
         columnWidth: '.grid-item',
         percentPosition: true
@@ -74,8 +74,7 @@ const Favorites = ({ host }) => {
 }
 
 Favorites.propTypes = {
-    host: PropTypes.string.isRequired,
-};
-
+  host: PropTypes.string.isRequired
+}
 
 export default Favorites
