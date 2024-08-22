@@ -1,15 +1,16 @@
-import Masonry from 'masonry-layout' // Import Masonry
+import Masonry from 'masonry-layout'; // Import Masonry
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 
-const Favorites = ({ apiUrl }) => {
+const host = 'https://api.christisfavoritethings.com/api'
+const Favorites = ({ host }) => {
   const [favorites, setFavorites] = useState([])
   const [error, setError] = useState(null)
 
   useEffect(() => {
     const getFavorites = async () => {
       try {
-        const response = await fetch(`${apiUrl}/favorites`)
+        const response = await fetch(`${host}/favorites`)
         if (!response.ok) {
           throw new Error('Failed to fetch data')
         }
