@@ -2,14 +2,14 @@ import Masonry from 'masonry-layout' // Import Masonry
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 
-const Favorites = ({ host }) => {
+const Favorites = ({ apiUrl }) => {
   const [favorites, setFavorites] = useState([])
   const [error, setError] = useState(null)
 
   useEffect(() => {
     const getFavorites = async () => {
       try {
-        const response = await fetch(`${host}/favorites`)
+        const response = await fetch(`${apiUrl}/favorites`)
         if (!response.ok) {
           throw new Error('Failed to fetch data')
         }
