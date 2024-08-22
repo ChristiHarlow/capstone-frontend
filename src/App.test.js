@@ -1,7 +1,7 @@
 // Import necessary libraries
-import { render, screen } from '@testing-library/react'
-import React from 'react'
-import App from './App'
+// import { render, screen } from '@testing-library/react'
+// import React from 'react'
+// import App from './App'
 
 // Define the test case
 // test('renders Christi\'s Favorite Things header', () => {

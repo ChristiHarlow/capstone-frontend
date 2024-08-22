@@ -1,8 +1,8 @@
-import Masonry from 'masonry-layout'; // Import Masonry
-import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
+import Masonry from 'masonry-layout'
+import PropTypes from 'prop-types'
+import React, { useEffect, useState } from 'react'
 
-const Favorites = ({host}) => {
+const Favorites = ({ host }) => {
   const [favorites, setFavorites] = useState([])
   const [error, setError] = useState(null)
 
